@@ -1,0 +1,10 @@
+{
+  "name": "Pharmacie & Parapharmacie",
+  "description": "Portail web moderne de pharmacie et parapharmacie - Achats en ligne, création de compte, téléversement d'ordonnances, Click & Collect, livraison à domicile et conseiller IA thérapeutique.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
