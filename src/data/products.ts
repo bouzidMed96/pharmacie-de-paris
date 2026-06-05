@@ -138,7 +138,7 @@ export const PRODUCTS_LIST: Product[] = [
     description: "Nettoie le visage et le corps des nourrissons et enfants avec douceur, tout en protégeant leur capital cellulaire cutané.",
     price: 6.90,
     oldPrice: 8.50,
-    image: "https://images.unsplash.com/photo-1515488042361-404e9250afef?w=450&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=450&auto=format&fit=crop&q=80",
     rating: 4.9,
     reviewsCount: 388,
     stock: 80,
