@@ -1,5 +1,5 @@
 /**
- * Header — Pharmacie de Paris, Enghien-les-Bains
+ * Header — Pharmacie de Paris
  */
 
 import React, { useState, useEffect, useRef } from "react";
@@ -73,11 +73,11 @@ export default function Header({
         <div className="flex items-center gap-4 text-emerald-200">
           <span className="flex items-center gap-1.5">
             <MapPin className="w-3 h-3 text-emerald-400 flex-shrink-0" />
-            6 bis rue du Départ · 95880 Enghien-les-Bains
+            {PHARMACY.address} · {PHARMACY.city}
           </span>
           <span className="hidden sm:flex items-center gap-1.5">
             <Phone className="w-3 h-3 text-emerald-400 flex-shrink-0" />
-            <a href="tel:0134128073" className="hover:text-white transition">01 34 12 80 73</a>
+            <a href={`tel:${PHARMACY.phone.replace(/\s/g, "")}`} className="hover:text-white transition">{PHARMACY.phone}</a>
           </span>
         </div>
         <div className="flex items-center gap-3 text-emerald-300 text-[11px] font-medium">
@@ -103,7 +103,7 @@ export default function Header({
               Pharmacie<span className="text-emerald-600"> de Paris</span>
             </span>
             <span className="text-[10px] uppercase tracking-wider font-semibold text-gray-400 group-hover:text-emerald-600 transition">
-              Enghien-les-Bains
+              {PHARMACY.subtitle}
             </span>
           </div>
         </button>

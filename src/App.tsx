@@ -13,7 +13,7 @@ import AIChatModal from "./components/AIChatModal";
 import AccountTab from "./components/AccountTab";
 import AdminPanel from "./components/AdminPanel";
 import { Product, CartItem, Prescription, Order, UserProfile, ChatMessage, ProductCategory } from "./types";
-import { PRODUCTS_LIST } from "./data/products";
+import { PRODUCTS_LIST, PHARMACY } from "./data/products";
 import { 
   Sparkles, 
   MapPin, 
@@ -49,9 +49,9 @@ export default function App() {
     address: {
       firstName: "Mohamed",
       lastName: "Bouzid",
-      addressLine1: "23 Rue du Général de Gaulle",
-      zipCode: "95880",
-      city: "Enghien-les-Bains",
+      addressLine1: "12 Rue de la Paix",
+      zipCode: "75001",
+      city: "Paris",
       phone: "06 12 34 56 78"
     },
     prescriptions: [
@@ -81,7 +81,7 @@ export default function App() {
         ],
         total: 39.70,
         deliveryMethod: "collect",
-        storeLocation: "Pharmacie Principale d'Enghien (23 Rue du Général de Gaulle, 95880 Enghien-les-Bains)",
+        storeLocation: PHARMACY.clickAndCollect,
         paymentMethod: "card",
         status: "Prêt pour retrait"
       }
@@ -341,9 +341,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           
           <div className="space-y-3">
-            <h4 className="font-extrabold text-sm uppercase text-emerald-300 tracking-wider">Pharmacie Principale d&apos;Enghien</h4>
+            <h4 className="font-extrabold text-sm uppercase text-emerald-300 tracking-wider">{PHARMACY.name}</h4>
             <p className="text-emerald-100 leading-relaxed text-[11px]">
-              Votre pharmacie de confiance à Enghien-les-Bains depuis plus de 20 ans. Commandez vos soins, médicaments et ordonnances en ligne — retrait express en pharmacie ou livraison à domicile sous 24h.
+              Votre pharmacie de confiance. Commandez vos soins, médicaments et ordonnances en ligne — retrait express en pharmacie ou livraison à domicile sous 24h.
             </p>
           </div>
 
@@ -352,7 +352,7 @@ export default function App() {
             <div className="text-[11px] text-emerald-100 space-y-2">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-emerald-400" />
-                <span>23 Rue du Général de Gaulle, 95880 Enghien-les-Bains</span>
+                <span>{PHARMACY.address}, {PHARMACY.city}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-emerald-400" />
@@ -360,7 +360,7 @@ export default function App() {
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>+33 1 34 12 61 23 · Agrément ARS Val-d&apos;Oise</span>
+                <span>{PHARMACY.phone} · Agrément ARS</span>
               </div>
             </div>
           </div>
@@ -380,7 +380,7 @@ export default function App() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-emerald-900 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-emerald-300 text-[11px] gap-2">
-          <span>© 2026 Pharmacie Principale d&apos;Enghien — Enghien-les-Bains (95). Tous droits réservés.</span>
+          <span>{PHARMACY.copyright}</span>
           <div className="flex gap-4">
             <span className="hover:underline cursor-pointer">Conditions Générales de Vente</span>
             <span className="hover:underline cursor-pointer">Protection des Données</span>

@@ -180,7 +180,7 @@ export default function AdminPanel({ onBack, onLogout }: AdminPanelProps) {
                 <h2 className="font-bold text-gray-900 mb-3 flex items-center gap-2"><Users className="w-4 h-4 text-green-600" /> Comptes (démo)</h2>
                 {[
                   { name: "Jean Dupont", email: "user@test.fr", role: "Client" },
-                  { name: "Admin Pharmacie", email: "admin@enghien-pharma.fr", role: "Admin" },
+                  { name: "Admin Pharmacie", email: "admin@pharmacie-demo.fr", role: "Admin" },
                 ].map((u) => (
                   <div key={u.email} className="flex items-center gap-3 py-2.5 border-b border-gray-50 last:border-0">
                     <div className="w-8 h-8 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">

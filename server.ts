@@ -38,7 +38,7 @@ function getGeminiClient(): GoogleGenAI {
 
 // ── Demo users ────────────────────────────────────────────────────────────────
 const DEMO_USERS = [
-  { id: "1", email: "admin@enghien-pharma.fr", password: "Admin123!", role: "admin", name: "Admin Pharmacie" },
+  { id: "1", email: "admin@pharmacie-demo.fr", password: "Admin123!", role: "admin", name: "Admin Pharmacie" },
   { id: "2", email: "user@test.fr",            password: "User123!",  role: "user",  name: "Jean Dupont" },
 ];
 
@@ -75,9 +75,9 @@ const SERVER_PRODUCTS: Record<string, unknown>[] = [
 app.get("/api/health", (_req, res) => {
   res.json({
     status: "healthy",
-    pharmacy: "Pharmacie Principale d'Enghien",
-    address: "23 Rue du General de Gaulle, 95880 Enghien-les-Bains",
-    phone: "+33 1 34 12 61 23",
+    pharmacy: "Pharmacie de Paris",
+    address: "12 Rue de la Paix, 75001 Paris",
+    phone: "+33 1 23 45 67 89",
     timestamp: new Date().toISOString(),
   });
 });
@@ -126,11 +126,11 @@ app.delete("/api/admin/products/:id", (req, res) => {
 
 app.get("/api/pharmacy/info", (_req, res) => {
   res.json({
-    name: "Pharmacie Principale d'Enghien",
-    address: "23 Rue du General de Gaulle",
-    city: "95880 Enghien-les-Bains",
-    phone: "+33 1 34 12 61 23",
-    email: "contact@enghien-pharma.fr",
+    name: "Pharmacie de Paris",
+    address: "12 Rue de la Paix",
+    city: "75001 Paris",
+    phone: "+33 1 23 45 67 89",
+    email: "contact@pharmacie-demo.fr",
     hours: [
       { day: "Lundi",    open: "09:00", close: "20:30" },
       { day: "Mardi",    open: "09:00", close: "20:30" },
@@ -150,11 +150,11 @@ app.post("/api/gemini/advice", async (req, res) => {
   try {
     const ai = getGeminiClient();
     const systemInstruction =
-      "Vous etes le pharmacien conseil de la Pharmacie Principale d'Enghien, a Enghien-les-Bains (95880). " +
+      "Vous etes le pharmacien conseil de la Pharmacie de Paris, au 12 Rue de la Paix, 75001 Paris. " +
       "Expert en parapharmacie, dermo-cosmetique, complements alimentaires et medicaments OTC. " +
       "Repondez en francais, avec chaleur et professionnalisme. " +
       "Pour symptomes graves, ajoutez [ATTENTION] Consultez un medecin. " +
-      "Utilisez du Markdown propre. Tel: +33 1 34 12 61 23.";
+      "Utilisez du Markdown propre. Tel: +33 1 23 45 67 89.";
 
     const contentPayload = Array.isArray(history) && history.length > 0
       ? [
@@ -178,7 +178,7 @@ app.post("/api/gemini/advice", async (req, res) => {
     res.status(500).json({
       error: "Erreur IA",
       fallback: true,
-      text: "L'assistant IA est indisponible. Appelez au **+33 1 34 12 61 23** ou venez au **23 Rue du General de Gaulle, Enghien-les-Bains**.",
+      text: "L'assistant IA est indisponible. Appelez au **+33 1 23 45 67 89** ou venez au **12 Rue de la Paix, 75001 Paris**.",
     });
   }
 });
@@ -193,9 +193,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`\n[EnghienPharma API] http://localhost:${PORT}`);
-  console.log(`[Info] Pharmacie Principale d'Enghien`);
-  console.log(`[Info] 23 Rue du General de Gaulle - 95880 Enghien-les-Bains`);
+  console.log(`\n[PharmaDemo API] http://localhost:${PORT}`);
+  console.log(`[Info] Pharmacie de Paris`);
+  console.log(`[Info] 12 Rue de la Paix - 75001 Paris`);
   if (process.env.NODE_ENV !== "production") {
     console.log(`[Dev]  Frontend Vite -> http://localhost:5173`);
     console.log(`[Dev]  API proxy configuree sur /api/**\n`);

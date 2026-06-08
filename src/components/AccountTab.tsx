@@ -81,7 +81,7 @@ export default function AccountTab({
               <User className="w-7 h-7 text-white" />
             </div>
             <h2 className="text-xl font-black">Mon Espace Client</h2>
-            <p className="text-[11px] text-emerald-200 mt-1">Pharmacie de Paris — Enghien-les-Bains</p>
+            <p className="text-[11px] text-emerald-200 mt-1">Pharmacie de Paris</p>
           </div>
 
           <form onSubmit={handleLoginSubmit} className="p-6 space-y-4">
@@ -89,7 +89,7 @@ export default function AccountTab({
             <div className="bg-blue-50 border border-blue-100 rounded-2xl p-3 text-xs text-blue-700 space-y-0.5">
               <p className="font-bold text-blue-800">Comptes de démonstration :</p>
               <p>👤 Client : <code className="bg-blue-100 px-1 rounded">user@test.fr</code> / <code className="bg-blue-100 px-1 rounded">User123!</code></p>
-              <p>🔑 Admin : <code className="bg-blue-100 px-1 rounded">admin@enghien-pharma.fr</code> / <code className="bg-blue-100 px-1 rounded">Admin123!</code></p>
+              <p>🔑 Admin : <code className="bg-blue-100 px-1 rounded">admin@pharmacie-demo.fr</code> / <code className="bg-blue-100 px-1 rounded">Admin123!</code></p>
             </div>
 
             {loginError && (

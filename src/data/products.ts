@@ -7,10 +7,14 @@ import { Product } from "../types";
 
 export const PHARMACY = {
   name: "Pharmacie de Paris",
-  address: "6 bis rue du Départ",
-  city: "95880 Enghien-les-Bains",
-  phone: "01 34 12 80 73",
-  clickAndCollect: "Pharmacie de Paris — 6 bis rue du Départ, 95880 Enghien-les-Bains",
+  subtitle: "Paris",
+  address: "12 Rue de la Paix",
+  city: "75001 Paris",
+  phone: "01 23 45 67 89",
+  email: "contact@pharmacie-demo.fr",
+  hours: "Lun–Sam : 9h00 – 20h30 · Dim : Fermé",
+  clickAndCollect: "Pharmacie de Paris — 12 Rue de la Paix, 75001 Paris",
+  copyright: "© 2026 Pharmacie de Paris — Paris. Tous droits réservés.",
 };
 
 // Kept for legacy compat with CheckoutModal (single entry = single store)
